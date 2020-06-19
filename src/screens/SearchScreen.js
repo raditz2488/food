@@ -5,7 +5,11 @@ import SearchBar from '../components/SearchBar'
 const SearchScreen = () => {
     const [term, setTerm] = useState('')
     return <View>
-        <SearchBar term={term} onChangeTerm={(newTerm) => setTerm(newTerm)}/>
+        <SearchBar 
+            term={term} 
+            onChangeTerm={(newTerm) => setTerm(newTerm)}
+            onTermSubmit={ () => console.log('term is submitted') }    
+        />
     </View>;
 }
 
