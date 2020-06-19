@@ -20,7 +20,8 @@ const styles = StyleSheet.create(
         },
         inputStyle: {
             flex: 1,
-            marginLeft: 15
+            marginLeft: 15,
+            fontSize: 18
         },
         iconStyle: {
             fontSize: 35,
