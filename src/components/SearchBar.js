@@ -10,6 +10,7 @@ const SearchBar = ({ term, onChangeTerm }) => {
             style={styles.inputStyle}
             value={term}
             onChangeText={onChangeTerm}
+            onEndEditing={ () => console.log('submitted') }
         />
     </View>;
 }
