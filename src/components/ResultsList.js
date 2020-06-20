@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList } from 'react-native';
 import ResultsDetail from './ResultsDetail';
 
 const ResultsList = ({ title, results }) => {
-    return <View>
+    return <View style={styles.container}>
         <Text style={styles.titleStyle}>{title}</Text>
         <FlatList
             horizontal
@@ -20,6 +20,9 @@ const styles = StyleSheet.create(
             fontSize: 18,
             fontWeight: 'bold',
             marginLeft: 15
+        },
+        container: {
+            marginBottom: 15
         }
     }
 );
