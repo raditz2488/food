@@ -8,6 +8,7 @@ const ResultsShowScreen = ( { navigation } ) => {
     
     const getResult = async (id) => {
         const response = yelp.get(`/${id}`);
+        setResult((await response).data)
     }
 
     return <View>
