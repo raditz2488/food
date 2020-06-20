@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const ResultsDetail = () => {
+const ResultsDetail = (result) => {
     return <View>
-        <Text>ResultsDetail</Text>
+        <Text>{result.name}</Text>
     </View>;
 }
 
