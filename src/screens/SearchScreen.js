@@ -6,6 +6,7 @@ import yelp from '../api/yelp';
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
     const [results, setResults] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const searchAPI = async () => {
         try {
@@ -18,8 +19,9 @@ const SearchScreen = () => {
             });
     
             setResults(response.data.businesses);
+            setErrorMessage("");
         } catch(err) {
-            console.log(err)
+            setErrorMessage("Something went wrong.");
         }
         
         
@@ -31,6 +33,7 @@ const SearchScreen = () => {
             onChangeTerm={(newTerm) => setTerm(newTerm)}
             onTermSubmit={ () => searchAPI() }    
         />
+        { errorMessage ? <Text>{errorMessage}</Text> : null }
         <Text>Found {results.length} results.</Text>
     </View>;
 }
