@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
+import ResultsList from '../components/ResultsList'
 
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
@@ -16,7 +17,9 @@ const SearchScreen = () => {
             onTermSubmit={ () => searchAPI(term) }    
         />
         { errorMessage ? <Text>{errorMessage}</Text> : null }
-        <Text>Found {results.length} results.</Text>
+        <ResultsList/>
+        <ResultsList/>
+        <ResultsList/>        
     </View>;
 }
 
