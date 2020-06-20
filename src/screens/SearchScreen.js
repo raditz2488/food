@@ -4,13 +4,16 @@ import SearchBar from '../components/SearchBar'
 import yelp from '../api/yelp';
 
 const SearchScreen = () => {
-    const [term, setTerm] = useState('')
+    const [term, setTerm] = useState('');
+    const [results, setResults] = useState([]);
+    
     return <View>
         <SearchBar 
             term={term} 
             onChangeTerm={(newTerm) => setTerm(newTerm)}
             onTermSubmit={ () => console.log('term is submitted') }    
         />
+        <Text>Found {results.length} results.</Text>
     </View>;
 }
 
