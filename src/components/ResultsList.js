@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import ResultsDetail from './ResultsDetail';
 
 const ResultsList = ({ title, results }) => {
@@ -10,7 +10,14 @@ const ResultsList = ({ title, results }) => {
             showsHorizontalScrollIndicator={false}
             data={results}
             keyExtractor={ (result) => result.id }
-            renderItem={ ({ item }) => <ResultsDetail result={item}/>  }
+            renderItem={ ({ item }) => {
+                return (
+                    <TouchableOpacity >
+                        <ResultsDetail result={item}/>
+                    </TouchableOpacity>
+                )
+                } 
+             }
         />
     </View>
 }
