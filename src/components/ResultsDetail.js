@@ -1,14 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { withNavigation } from 'react-navigation';
 
-const ResultsDetail = ({result}) => {
+const ResultsDetail = ({ result, navigation }) => {
     return <View style={styles.container}>
-        <TouchableOpacity>
             <Image style={styles.imageStyle} source={{ uri: result.image_url }}/>
             <Text style={styles.nameStyle}>{result.name}</Text>
             <Text>{result.rating} Stars, {result.review_count} Reviews</Text>
-        </TouchableOpacity>
     </View>;
 }
 
@@ -29,4 +26,4 @@ let styles = StyleSheet.create(
     }
 );
 
-export default withNavigation(ResultsDetail);
+export default ResultsDetail;
