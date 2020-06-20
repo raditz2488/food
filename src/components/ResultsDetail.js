@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 const ResultsDetail = ({result}) => {
     return <View style={styles.container}>
@@ -28,4 +29,4 @@ let styles = StyleSheet.create(
     }
 );
 
-export default ResultsDetail;
+export default withNavigation(ResultsDetail);
