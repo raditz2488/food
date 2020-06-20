@@ -17,9 +17,9 @@ const SearchScreen = () => {
             onTermSubmit={ () => searchAPI(term) }    
         />
         { errorMessage ? <Text>{errorMessage}</Text> : null }
-        <ResultsList/>
-        <ResultsList/>
-        <ResultsList/>        
+        <ResultsList title='Cost Efficient'/>
+        <ResultsList title='Bit Pricier'/>
+        <ResultsList title='Big Spender'/>        
     </View>;
 }
 
