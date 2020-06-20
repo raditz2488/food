@@ -8,12 +8,12 @@ const SearchScreen = () => {
     const [results, setResults] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
 
-    const searchAPI = async () => {
+    const searchAPI = async (searchTerm) => {
         try {
             const response = await yelp.get('/search', {
                 params: {
                     limit: 50,
-                    term,
+                    term: searchTerm,
                     location: 'san jose'
                 }
             });
@@ -30,8 +30,8 @@ const SearchScreen = () => {
     return <View>
         <SearchBar 
             term={term} 
-            onChangeTerm={(newTerm) => setTerm(newTerm)}
-            onTermSubmit={ () => searchAPI() }    
+            onChangeTerm={setTerm}
+            onTermSubmit={ () => searchAPI(term) }    
         />
         { errorMessage ? <Text>{errorMessage}</Text> : null }
         <Text>Found {results.length} results.</Text>
