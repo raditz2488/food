@@ -9,6 +9,12 @@ const SearchScreen = () => {
     
     const [searchAPI, results, errorMessage] = useResults();
 
+    const filterResultsForPrice = (price) => {
+        // price === '$' || '$$' || '$$$'
+        return results.filter((result) => {
+            return result.price === price
+        })
+    }
 
     return <View>
         <SearchBar 
@@ -17,9 +23,9 @@ const SearchScreen = () => {
             onTermSubmit={ () => searchAPI(term) }    
         />
         { errorMessage ? <Text>{errorMessage}</Text> : null }
-        <ResultsList title='Cost Efficient' results={results}/>
-        <ResultsList title='Bit Pricier' results={results}/>
-        <ResultsList title='Big Spender' results={results}/>        
+        <ResultsList title='Cost Efficient' results={filterResultsForPrice('$')}/>
+        <ResultsList title='Bit Pricier' results={filterResultsForPrice('$$')}/>
+        <ResultsList title='Big Spender' results={filterResultsForPrice('$$$')}/>        
     </View>;
 }
 
